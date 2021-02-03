@@ -20,9 +20,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'animemes', //your command name
-    description: 'Sends a random post from r/animemes', //your command description ; you can set it as you want
-    usage: 'animemes' //how that command is working
-  };
+  module.exports.help = {
+    name: "animemes"
+};
 //By NightcoreAT#3678

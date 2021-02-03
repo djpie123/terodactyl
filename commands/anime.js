@@ -43,9 +43,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: "anime", //your command name
-    description: "Provides info about an anime ; Please note that the search does not support multiple languages", 
-    usage: "anime [anime name]" //how did that command is working
-  };
+  module.exports.help = {
+    name: "animae"
+};
 //By NightcoreAT3678
