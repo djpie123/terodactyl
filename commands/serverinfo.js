@@ -1,4 +1,4 @@
-#By NightcoreAT
+
 const Discord = require('discord.js'); //npm i discord.js
  //to import your personal footer
 
@@ -66,4 +66,4 @@ exports.help = {
   description: 'Displays information about the server.',
   usage: 'serverinfo'
 };
-//By NightcoreAT#3678
+
