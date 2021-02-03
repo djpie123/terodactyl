@@ -11,7 +11,6 @@ exports.run = (client, message) => {
       .setAuthor('BOT UPTIME')
       .setThumbnail(`${this.client.user.displayAvatarURL(({ dynamic: true }))}`)
       .addField("Uptime:",+ hours + " **hours, **" + minutes + "** minutes and **" + seconds + "." + milliseconds + "** seconds!")
-      .setFooter(`${this.client.user.username}`, `${this.client.user.displayAvatarURL({ dynamic: true })}`)
       .setTimestamp()
   return message.channel.send(embed);
 }
