@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
-const helpanimae = new Discord.MessageEmbed()
-.setTitle('HELP ANIMAE')
+const ani = new Discord.MessageEmbed()
+.setTitle('HELP ANIME')
 .setURL('https://discord.gg/HfkfcMS')
 .setAuthor('Terodactyl#6714', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB5OI1Ao0e2dJmvAhXcE_A9tMj14ittIq_wQ&usqp=CAU' )
 .addField('*fight', 'to fight someone', true)
@@ -26,8 +26,8 @@ const helpanimae = new Discord.MessageEmbed()
 .setColor('RANDOM');
 
 module.exports.run = (client, message, args) => {
- return message.channel.send(helpanimae);  
+ return message.channel.send(ani);  
 }
 module.exports.help = {
-    name: "help"
+    name: "anhelp"
 };
