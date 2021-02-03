@@ -29,5 +29,5 @@ module.exports.run = (client, message, args) => {
  return message.channel.send(ani);  
 }
 module.exports.help = {
-    name: "anhelp"
+    name: "an1help"
 };
