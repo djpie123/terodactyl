@@ -20,7 +20,6 @@ exports.run = async (client, msg, args) => {
           .setTimestamp()
           .setURL(`${user.avatarURL}`) 
           .addField('Currently', `${muser.presence.status.toUpperCase()}`, true) //check if your status is Online;Idle;DND;Offline
-          .addField('Game', `${muser.presence.game === null ? "No Game" : muser.presence.game.name}`, true) //check your game qctivity or your custom status
           .addField('Joined Discord', `${moment(user.createdAt).toString().substr(0, 15)}\n(${moment(user.createdAt).fromNow()})`, true)
           .addField('Joined Server', `${moment(muser.joinedAt).toString().substr(0, 15)}\n(${moment(muser.joinedAt).fromNow()})`, true)
           .addField('Roles', `${muser.roles.array()}`, true) //All the roles that you own, but they do not apply to all servers in it, but to the server in which you use this command 
