@@ -1,18 +1,18 @@
-const Discord = require('discord.js'); //npm i discordjs@12.2.0
+const Discord = require('discord.js'); //npm i discordjs@12.2.0 | npm i discord.js
 const superagent = require('superagent'); //npm i superagent
-const sf = require("snekfetch"); //npm i snekfetch
+ 
 
-
-exports.run = async (client, message, args) => {
+exports.run = async (client, message, args, tools) => { //lets started
+    
     const { body } = await superagent
-    .get("http://aws.random.cat/meow");
-
-    const embed = new Discord.MessageEmbed() //changed from RichEmbed to MessageEmbed once discord is updated to 12.0.0
-    .setColor("#ff9900")
-    .setTitle("Here's Your Cat") //you can change it 
-    .setImage(body.file) //here your order is showing as body
-    .setFooter('THIS BOT IS MADE BY PIE IS LIVE ');
-    message.channel.send({embed});
+    .get("http://aws.random.cat/meow"); 
+    
+    const embed = new Discord.MessageEmbed() // once discord is updated to latest version 12.2.0 , RichEmbed is removed and rename to MessageEmbed
+    .setColor("#3bb9ff") // set your own color
+    .setTitle(`HERE'S UR CAT`) // lets make your command so fun 
+    .setImage(body.url) //your commands well showing here
+    .setFooter('THIS BOT IS MADE BY PIE IS LIVE '); // optional
+    message.channel.send({embed})
 };
 
 exports.conf = {
@@ -25,4 +25,3 @@ exports.conf = {
   module.exports.help = {
     name: "cat"
 };
-//By NightcoreAT#3678
