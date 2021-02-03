@@ -10,7 +10,7 @@ exports.run = (client, message) => {
       .setColor('RANDOM')
       .setAuthor('BOT UPTIME')
       .setThumbnail(`https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB5OI1Ao0e2dJmvAhXcE_A9tMj14ittIq_wQ&usqp=CAU`)
-      .addField("Uptime:",+ hours + " **hours, **" + minutes + "** minutes and **" + seconds + "." + milliseconds + "** seconds!")
+      .addField("Uptime:",+ hours + " **hours, **" + minutes + "** minutes and **" + seconds + "." + milliseconds + " seconds!")
       .setTimestamp()
   return message.channel.send(embed);
 }
