@@ -3,13 +3,8 @@ module.exports.run = (client, message, args) => {
     const embed = new Discord.MessageEmbed()
             .setTitle("Pong!")
             .setDescription(
-                `Websocket Latency: ${
-                this.client.ws.ping ? Math.floor(this.client.ws.ping) : 0
-                }ms\nBot Latency: ${Math.round(
-                    Date.now() - message.createdTimestamp
-                )}ms`
-            )
-            .setColor("#7289DA");
+               "BOT LATENCY : " + Math.round(client.ws.ping))
+            .setColor("RANDOM");
             return message.channel.send(embed)
 }
 
