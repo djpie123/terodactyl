@@ -1,6 +1,6 @@
 const Discord = require('discord.js'); //npm i discord.js
 const superagent = require('superagent'); //npm i superagent
-const customisation = require('../customisation.json');
+
 
 exports.run = async (client, message, args, tools) => { //lets started your commands script
     if (!message.mentions.users.first()) return message.reply("You need to mention someone to slap them"); //if no one is mentions , lets reply as
@@ -12,7 +12,7 @@ exports.run = async (client, message, args, tools) => { //lets started your comm
     .setColor("#ff9900") // you can set it as you went
     .setTitle(`bro , ${message.mentions.users.first().username} you have been slaped by ${message.author.username}`) //lets reply as a some fun reply
     .setImage(body.url) //lets show slap image (GIF}
-    .setFooter(`© ${customisation.ownername}`); //personnel footer
+    .setFooter(`THIS BOT IS MADE BY PIE IS LIVE`); //personnel footer
     message.channel.send({embed})
 };
 
