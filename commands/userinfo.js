@@ -12,7 +12,7 @@ exports.run = async (client, msg, args) => {
   let muser = msg.guild.member(msg.mentions.users.first());
     if (!muser) muser = msg.member;
     if(!user) user = msg.author;
-  const embed = new Discord.RichEmbed();
+  const embed = new Discord.MessageEmbed();
   embed.addField("Username", `${user.username}#${user.discriminator}`, true) //that field well show your information full on Discord Or Server
           .addField("ID", `${user.id}`, true) //your ID and your name OR your friends ID and his name
           .setColor(3447003)

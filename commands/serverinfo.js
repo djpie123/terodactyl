@@ -33,7 +33,7 @@ exports.run = (client, message, args) => { //Let's give the bot the information 
         emojis = message.guild.emojis.size; //The bot will tell you the number of emoji in the server, and if available, it will give you their number
     }
 
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
   .setAuthor(message.guild.name, message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL) //Let know the name of the server and its icon with your avatar
   .setThumbnail(message.guild.iconURL) //Here the server icon is placed
   .setTimestamp()
