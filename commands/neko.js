@@ -22,9 +22,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { //lets load commands 
-    name: 'neko', //commands name
-    description: 'Sends a random Neko ', //commands discription
-    usage: 'neko' //how they work
-  };
+  module.exports.help = {
+    name: "neko"
+};
 //By NightcoreAT#3678

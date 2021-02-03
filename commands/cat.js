@@ -22,9 +22,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'cat',
-    description: 'Sends a random cat',
-    usage: 'cat'
-  };
+  module.exports.help = {
+    name: "cat"
+};
 //By NightcoreAT#3678

@@ -16,10 +16,7 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'fight', // commands name
-  description: 'Fights a user.', // commands description
-  usage: 'fight <user>', // how they work
-  example: 'fight <@NightcoreAt#---->' //let show an example to how working
+module.exports.help = {
+  name: "fight"
 };
 //By NightcoreAT#3678

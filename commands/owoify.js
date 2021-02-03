@@ -19,8 +19,6 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'owoify',
-  description: 'OwO-ify a message',
-  usage: 'owoify'
+module.exports.help = {
+  name: "owoify"
 };

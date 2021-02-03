@@ -14,8 +14,6 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'hammer',
-  description: 'Gives you a hammer to throw at a pleb.',
-  usage: 'hammer'
+module.exports.help = {
+  name: "hammer"
 };

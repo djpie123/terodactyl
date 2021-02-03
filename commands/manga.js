@@ -44,9 +44,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: "manga", //your command name
-    description: "Provides info about a particular manga; Please note that the search does not support multiple languages", //your command description
-    usage: "manga [manga]" //how did it work
-  };
+  module.exports.help = {
+    name: "manga"
+};
 //By NightcoreAT#3678

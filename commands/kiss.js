@@ -23,9 +23,7 @@ exports.conf = { //config commands
     permLevel: 0
   };
   
-  exports.help = { //config export help to make bots is know where or what the commands names
-    name: 'kiss',
-    description: 'Kisses someone OwO',
-    usage: 'kiss'
-  };
+  module.exports.help = {
+    name: "kiss"
+};
 //By NightcoreAT#3678

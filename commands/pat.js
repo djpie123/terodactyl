@@ -23,10 +23,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { //lets load commands
-    name: 'pat', //commands name
-    description: 'Pats anyone you went', //commands description
-    usage: 'pat', // how they work
-    example: 'pat <@otaku#--->' //here a some example about how they work
-  };
+  module.exports.help = {
+    name: "pat"
+};
 //By NightcoreAT#3678

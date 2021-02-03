@@ -21,9 +21,6 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { //lets load commands
-    name: 'hug', //commands names
-    description: 'hugs which you went', //commands description
-    usage: 'hug', //how they work
-    example: 'hug <@NightcoreAt#---->' //here a some example about how they work
-  };
+  module.exports.help = {
+    name: "hug"
+};

@@ -22,10 +22,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'feed', //Command Name
-    description: 'Feeds someone OwO', // command description
-    usage: 'feed', // how can you use it
-    example: 'feed <@mention>' //for example to how use it
-  };
+  module.exports.help = {
+    name: "feed"
+};
 //By NightcoreAT#3678

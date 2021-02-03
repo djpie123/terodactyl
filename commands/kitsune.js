@@ -21,9 +21,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'kitsune', //commands name
-    description: 'Kitsunes )w)', //commands description
-    usage: 'kitsune' //how they work
-  };
+  module.exports.help = {
+    name: "kisstune"
+};
 //By NightcoreAT#3678

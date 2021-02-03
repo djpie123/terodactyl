@@ -19,9 +19,7 @@ exports.conf = {
     permLevel: 0
     };
      
-exports.help = {
-  name: 'moe', //commands name
-  description: 'Sends a random awwnime image', //commands description
-  usage: 'moe' //how they working
-};
-//By NightcoreAT#3678
+
+    module.exports.help = {
+      name: "moe"
+  };

@@ -20,9 +20,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'baka',
-    description: 'Baka UwU',
-    usage: 'baka'
-  };
+  module.exports.help = {
+    name: "baka"
+};
 //By NightcoreAT#3678
