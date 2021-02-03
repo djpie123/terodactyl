@@ -18,10 +18,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { // let load commands
-    name: 'truth', // commands name
-    description: 'Sends a scroll truth', //commands description
-    usage: 'truth (truth)' // how use it
-    example: 'truth <@mention> | (truth)' //show how they work   
-  };
+  module.exports.help = {
+    name: "truth"
+};
 //By NightcoreAT#3678

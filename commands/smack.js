@@ -13,9 +13,7 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = { //lets load your commands
-  name: 'smack', // commands name
-  description: 'Smacks a user.', //commands description
-  usage: 'smack <user>' //how they work
+module.exports.help = {
+  name: "smack"
 };
 //By NightcoreAT#3678

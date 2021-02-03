@@ -20,9 +20,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'waifu',
-    description: 'random waifu OwO',
-    usage: 'waifu'
-  };
+  module.exports.help = {
+    name: "waifu"
+};
 //By NightcoreAT#3678

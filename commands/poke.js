@@ -24,10 +24,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { // lets load your commands
-    name: 'poke', // commands name
-    description: 'Pokes anyone you went', // commands description
-    usage: 'poke', //how they work
-    example: 'poke <@otaku#---->' //here il show a some example to how they work    
-  };
+  module.exports.help = {
+    name: "poke"
+};
 //By NightcoreAT#3678

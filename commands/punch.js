@@ -16,10 +16,7 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = { //lets load your commands 
-  name: 'punch', //commands name
-  description: 'Punches a user.', //commands description
-  usage: 'punch <user>', //how they work
-  example: 'punch <@Otaku#---->' //lets show a some example about how they work
+module.exports.help = {
+  name: "punch"
 };
 //By NightcoreAT#3678

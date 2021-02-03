@@ -23,10 +23,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { //lets load commands
-    name: 'spank', //commands name
-    description: 'Spanks someone bro', //command description
-    usage: 'spank', //how they work
-    example: 'spank <@NightcoreAT#---->' //here some example to how they work
-  };
+  module.exports.help = {
+    name: "spank"
+};
 //By NightcoreAT#3678

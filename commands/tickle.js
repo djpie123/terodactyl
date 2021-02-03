@@ -23,10 +23,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { 
-    name: 'tickle', // command name
-    description: 'lets tickle anyone', //commands description
-    usage: 'tickle <@mention>', //how they work
-    example: 'tickle <@Otaku#---->' //how you can use it for example
-  };
+  module.exports.help = {
+    name: "tickle"
+};
 //By NightcoreAT#3678

@@ -61,9 +61,6 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'serverinfo',
-  description: 'Displays information about the server.',
-  usage: 'serverinfo'
+module.exports.help = {
+  name: "serverinfo"
 };
-

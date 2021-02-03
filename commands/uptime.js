@@ -19,9 +19,7 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'uptime', //follow description :)
-  description: 'Shows how long the bot has been online for.',
-  usage: 'uptime'
+module.exports.help = {
+  name: "uptime"
 };
 // By NightcoreAT#3678

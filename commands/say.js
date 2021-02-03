@@ -13,9 +13,7 @@ exports.conf = {
     permLevel: 0
 };
 
-exports.help = {
-    name: "say", //your command name
-    description: "Makes the bot repeat your message.", //your command description
-    usage: "say [message]" //how did it work : say [hi, how are you] as example !
+module.exports.help = {
+    name: "say"
 };
 //By NightcoreAT#3678

@@ -14,10 +14,7 @@ exports.conf = {
   aliases: [], //Leave it empty as better
   permLevel: 0
 };
-
-exports.help = {
-  name: 'rps', //your command name
-  description: 'Rock, Papper, Scissors.', //your command description
-  usage: 'rps' //how did it work
+module.exports.help = {
+  name: "rps"
 };
 //By NightcoreAT#3678

@@ -36,9 +36,7 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'userinfo',
-  description: 'Displays information about a user.',
-  usage: 'userinfo <@user>'
+module.exports.help = {
+  name: "userinfo"
 };
 //By NightcoreAT#3678

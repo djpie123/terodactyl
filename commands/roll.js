@@ -12,9 +12,7 @@ exports.conf = {
   permLevel: 0
 };
 
-exports.help = {
-  name: 'roll', //your command name
-  description: 'Rolls a die.', //your command description
-  usage: 'roll' //how did that command is work
+module.exports.help = {
+  name: "roll"
 };
 //By NightcoreAT#3678

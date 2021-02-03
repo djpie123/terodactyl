@@ -21,9 +21,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = { //lets load commands
-    name: 'smug', //commands name
-    description: 'Smugs', //commands description
-    usage: 'smug' // how they work
-  };
+  module.exports.help = {
+    name: "smug"
+};
 //By NightcoreAT#3678

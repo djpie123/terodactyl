@@ -18,9 +18,7 @@ exports.conf = {
     permLevel: 0
   };
   
-  exports.help = {
-    name: 'woosh',
-    description: 'r/woosh',
-    usage: 'woosh (w or w/o @mention)'
-  };
+  module.exports.help = {
+    name: "woosh"
+};
 //By NightcoreAT#3678
