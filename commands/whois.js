@@ -4,19 +4,19 @@ module.exports.run =async (bot, message, args) => {
     let inline = true
     let resence = true
     const status = {
-        online: "<:online:424890369688469504> Online",
-        idle: "<:idle:424890472855502849> Idle",
-        dnd: "<:dnd:424890429524410368> Do Not Disturb",
-        offline: "<:offilne:424890400319340546> Offline/Invisible"
+        online: "<:online:806731119260205057> Online",
+        idle: "<:idle:806731237627920404> Idle",
+        dnd: "<:dnd:806731376908959805> Do Not Disturb",
+        offline: "<:offline:806731149820559380> Offline/Invisible"
       }
         
 const member = message.mentions.members.first() || message.author
 let target = message.mentions.users.first() || message.author
 
 if (member.bot) {
-    bot = "<:bottag:425631858265423883> Yes";
+    bot = "<:bottag:806732345175703563> Yes";
   } else {
-    bot = "<:user:424958082691629057> No";
+    bot = "<:user:806733095570505759> No";
   }
 
             let embed = new Discord.MessageEmbed()
