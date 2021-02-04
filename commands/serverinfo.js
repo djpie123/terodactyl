@@ -34,7 +34,7 @@ exports.run = (client, message) => {
         .addField("Members", message.guild.memberCount, true)
         .addField("Roles", message.guild.roles.size, true)
         .addField("Channels", message.guild.channels.size, true)
-        .setColor(client.config.embedColor);
+        .setColor("RANDOM");
     message.channel.send({ embed });
 }
 module.exports.help = {

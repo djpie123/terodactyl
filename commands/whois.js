@@ -14,7 +14,7 @@ module.exports.run =async (bot, message, args) => {
     bot = "<:user:806733095570505759> No"; 
   } 
   let embed = new Discord.MessageEmbed() 
-.setAuthor(member.user.username) 
+.setAuthor(member.username) 
 .setThumbnail((target.displayAvatarURL)) 
 .setColor("RANDOM") 
 .addField("Full Username", `${member.username}#${member.discriminator}` , inline) 
