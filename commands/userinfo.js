@@ -1,41 +1,44 @@
-const moment = require('moment'); //npm i moment
-const Discord = require('discord.js'); //npm i discord.js
- //your personnel footer
-function checkDays(date) { // that will count the time you spent on server and discord
-  let now = new Date();
-  let diff = now.getTime() - date.getTime();
-  let days = Math.floor(diff / 86400000);
-  return days + (days == 1 ? " day" : " days") + " ago";
-};
-exports.run = async (client, msg, args) => {
-  let user = msg.mentions.users.first(); 
-  let muser = msg.guild.member(msg.mentions.users.first());
-    if (!muser) muser = msg.member;
-    if(!user) user = msg.author;
-  const embed = new Discord.MessageEmbed();
-  embed.addField("Username", `${user.username}#${user.discriminator}`, true) //that field well show your information full on Discord Or Server
-          .addField("ID", `${user.id}`, true) //your ID and your name OR your friends ID and his name
-          .setColor(3447003)
-          .setThumbnail(`${user.avatarURL}`) // your personnel avatar or your friends personnel avatar
-          .setTimestamp()
-          .setURL(`${user.avatarURL}`) 
-          .addField('Currently', `${muser.presence.status.toUpperCase()}`, true) //check if your status is Online;Idle;DND;Offline
-          .addField('Joined Discord', `${moment(user.createdAt).toString().substr(0, 15)}\n(${moment(user.createdAt).fromNow()})`, true)
-          .addField('Joined Server', `${moment(muser.joinedAt).toString().substr(0, 15)}\n(${moment(muser.joinedAt).fromNow()})`, true)
-          .addField('Roles', `${muser.roles.array()}`, true) //All the roles that you own, but they do not apply to all servers in it, but to the server in which you use this command 
-          .addField('Is Bot', `${user.bot.toString().toUpperCase()}`, true) //Most likely if you select a member he will say no and if it is a bot he will say yes
-          .setFooter('THIS BOT IS MADE BY PIE IS LIVE ');
-      msg.channel.send({embed});
-}
+const Discord = require("discord.js");
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["userstats"],
-  permLevel: 0
-};
+module.exports.run =async (bot, message, args) => {
+    let inline = true
+    let resence = true
+    const status = {
+        online: "<:online:806731119260205057> Online",
+        idle: "<:idle:806731237627920404> Idle",
+        dnd: "<:dnd:806731376908959805> Do Not Disturb",
+        offline: "<:offline:806731149820559380> Offline/Invisible"
+      }
+        
+const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+let target = message.mentions.users.first() || message.author
 
-module.exports.help = {
-  name: "userinfo"
-};
-//By NightcoreAT#3678
+if (member.user.bot === true) {
+    bot = "<:bottag:806732345175703563> Yes";
+  } else {
+    bot = "<:user:806733095570505759> No";
+  }
+
+            let embed = new Discord.RichEmbed()
+                //.setAuthor(member.user.username)
+                .setThumbnail((target.displayAvatarURL))
+                .setColor("#00ff00")
+                .addField("Full Username", `${member.user.tag}`, inline)
+                .addField("ID", member.user.id, inline)
+                .addField("Nickname", `${member.nickname !== null ? `<:yes:425632265993846795> Nickname: ${member.nickname}` : "<:no:425632070036094986> None"}`, true)
+                .addField("Bot", `${bot}`,inline, true)
+                .addField("Status", `${status[member.user.presence.status]}`, inline, true)
+                .addField("Playing", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "<:no:425632070036094986> Not playing"}`,inline, true)
+                .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "<:no:425632070036094986> No Roles"}`, true)
+                .addField("Joined Discord At", member.user.createdAt)
+                .setFooter(`Information about ${member.user.username}`)
+                .setTimestamp()
+    
+            message.channel.send(embed);
+
+            message.delete();
+    }
+
+    module.exports.help = {
+        name: "userinfo"
+    }
