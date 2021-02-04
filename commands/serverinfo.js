@@ -25,13 +25,6 @@ exports.run = (client, message) => {
         "amsterdam": "Amsterdam",
         "hongkong": "Hong Kong"
     };
-
-    var emojis;
-    if (message.guild.emojis.size === 0) {
-        emojis = 'None';
-    } else {
-        emojis = message.channel.guild.emojis.map(e => e).join(" ");
-    }
     embed.setAuthor(message.guild.name, message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
         .setThumbnail(message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
         .addField("Created", `${message.guild.createdAt.toString().substr(0, 15)},\n${checkDays(message.guild.createdAt)}`, true)
@@ -41,7 +34,6 @@ exports.run = (client, message) => {
         .addField("Members", message.guild.memberCount, true)
         .addField("Roles", message.guild.roles.size, true)
         .addField("Channels", message.guild.channels.size, true)
-        //.addField("Emojis", emojis, true)
         .setColor(client.config.embedColor);
     message.channel.send({ embed });
 }
