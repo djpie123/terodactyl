@@ -87,7 +87,7 @@ client.on("message", message => {
         return distube.skip(message);
     } 
     if(command === "stop" || command === "leave"){
-        embedbuilder(client, message, "RED", "STOPPED!", `Leaved the channel`)
+        embedbuilder(client, message, "RED", "STOPPED!", `Left the channel`)
         return distube.stop(message);
     }
     if(command === "seek"){
