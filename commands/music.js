@@ -1,6 +1,6 @@
 const Discord = require('discord.js')
 const help = new Discord.MessageEmbed()
-.setTitle('HELP')
+.setTitle('MUSIC')
 .setURL('https://discord.gg/HfkfcMS')
 .setAuthor('Terodactyl#6714', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB5OI1Ao0e2dJmvAhXcE_A9tMj14ittIq_wQ&usqp=CAU' )
 .addField('*play/p', 'to play music', true)

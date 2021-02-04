@@ -26,7 +26,7 @@ if (member.bot) {
                 .addField("Full Username", `${member.username}#${member.discriminator}` , inline)
                 .addField("ID", member.id, inline)
                 .addField("Nickname", `${member.nickname !== null ? `<a:nod:806741519117713418> Nickname: ${member.nickname}` : "<a:no:806742164301807626> None"}`, true)
-                 addField("Bot", `${bot}`,inline, true)
+                .addField("Bot", `${bot}`,inline, true)
                 .addField("Status", `${status[member.presence.status]}`, inline, true)
                 .addField("Playing", `${member.presence.game ? `🎮 ${member.presence.game.name}` : "<a:no:806742164301807626> Not playing"}`,inline, true)
                 .addField("Joined Discord At", member.createdAt)
