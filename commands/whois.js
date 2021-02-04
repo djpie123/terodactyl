@@ -10,9 +10,8 @@ module.exports.run =async (bot, message, args) => {
         offline: "<:offline:806731149820559380> Offline/Invisible"
       }
         
-const member = message.mentions.members.first() || message.author
-let target = message.mentions.users.first() || message.author
-
+const member = message.mentions.users.members.first() || message.author
+const target = member
 if (member.bot) {
     bot = "<:bottag:806732345175703563> Yes";
   } else {
