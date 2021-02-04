@@ -29,7 +29,7 @@ if (member.bot) {
                 .addField("Bot", `${bot}`,inline, true)
                 .addField("Status", `${status[member.presence.status]}`, inline, true)
                 .addField("Playing", `${member.presence.game ? `🎮 ${member.presence.game.name}` : "<a:no:806742164301807626> Not playing"}`,inline, true)
-                .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "<a:no:806742164301807626> No Roles"}`, true)
+                .addField("Roles", `${member.roles.map(roles => `\`${roles.name}\``).join(" **|** ") || "<a:no:806742164301807626> No Roles"}`, true)
                 .addField("Joined Discord At", member.createdAt)
                 .setFooter(`Information about ${member.username}`)
                 .setTimestamp()
@@ -40,5 +40,5 @@ if (member.bot) {
     }
 
     module.exports.help = {
-        name: "userinfo"
+        name: "whois"
     }
