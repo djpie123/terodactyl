@@ -19,7 +19,7 @@ if (member.bot) {
     bot = "<:user:424958082691629057> No";
   }
 
-            let embed = new Discord.RichEmbed()
+            let embed = new Discord.MessageEmbed()
                 //.setAuthor(member.user.username)
                 .setThumbnail((target.displayAvatarURL))
                 .setColor("#00ff00")
