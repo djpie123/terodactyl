@@ -71,7 +71,7 @@ function xp(message) {
 client.on("message", message => {
     if(message.author.bot){ return; }
     if(!message.guild) return;
-    const args = message.content.slice(cleint.config.prefix.length).trim().split(/ +/g);
+    const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
     const command = args.shift();
 
     if(command === "ping"){
