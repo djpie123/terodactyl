@@ -27,11 +27,11 @@ if (member.bot) {
                 .addField("ID", member.id, inline)
                 .addField("Nickname", `${member.nickname !== null ? `<a:nod:806741519117713418> Nickname: ${member.nickname}` : "<a:no:806742164301807626> None"}`, true)
                 .addField("Bot", `${bot}`,inline, true)
-                .addField("Status", `${status[member.user.presence.status]}`, inline, true)
-                .addField("Playing", `${member.user.presence.game ? `🎮 ${member.user.presence.game.name}` : "<a:no:806742164301807626> Not playing"}`,inline, true)
+                .addField("Status", `${status[member.presence.status]}`, inline, true)
+                .addField("Playing", `${member.presence.game ? `🎮 ${member.presence.game.name}` : "<a:no:806742164301807626> Not playing"}`,inline, true)
                 .addField("Roles", `${member.roles.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "<a:no:806742164301807626> No Roles"}`, true)
-                .addField("Joined Discord At", member.user.createdAt)
-                .setFooter(`Information about ${member.user.username}`)
+                .addField("Joined Discord At", member.createdAt)
+                .setFooter(`Information about ${member.username}`)
                 .setTimestamp()
     
             message.channel.send(embed);
