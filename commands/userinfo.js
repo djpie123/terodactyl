@@ -13,7 +13,7 @@ module.exports.run =async (bot, message, args) => {
 const member = message.mentions.members.first() 
 let target = message.mentions.users.first() || message.author
 
-if (member.user.bot) {
+if (target.user.bot) {
     bot = "<:bottag:806732345175703563> Yes";
   } else {
     bot = "<:user:806733095570505759> No";
