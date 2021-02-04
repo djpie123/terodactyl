@@ -8,7 +8,7 @@ function checkDays(date) {
 };
 
 exports.run = (client, message) => {
-    let embed = new Discord.RichEmbed();
+    let embed = new Discord.MessageEmbed();
     let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
     let region = {
         "brazil": "Brazil",
