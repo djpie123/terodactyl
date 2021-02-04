@@ -1,44 +1,30 @@
-const Discord = require("discord.js");
-const { stripIndents } = require("common-tags");
-const { DiscordAPIError } = require("discord.js");
-const { getMember, formatDate } = require("../../functions.js");
-
-module.exports = {
-    name: "whois",
-    aliases: ["who", "user", "info"],
-    description: "Returns user information",
-    usage: "[username | id | mention]",
-    run: (client, message, args) => {
-        const member = getMember(message, args.join(" "));
-
-        // Member variables
-        const joined = formatDate(member.joinedAt);
-        const roles = member.roles
-            .filter(r => r.id !== message.guild.id)
-            .map(r => r).join(", ") || 'none';
-
-        // User variables
-        const created = formatDate(member.user.createdAt);
-
-        const embed = new Discord.MessageEmbed()
-            .setFooter(member.displayName, member.user.displayAvatarURL)
-            .setThumbnail(member.user.displayAvatarURL)
-            .setColor(member.displayHexColor === '#000000' ? '#ffffff' : member.displayHexColor)
-
-            .addField('Member information:', stripIndents`**- Display name:** ${member.displayName}
-            **- Joined at:** ${joined}
-            **- Roles:** ${roles}`, true)
-
-            .addField('User information:', stripIndents`**- ID:** ${member.user.id}
-            **- Username**: ${member.user.username}
-            **- Tag**: ${member.user.tag}
-            **- Created at**: ${created}`, true)
-            
-            .setTimestamp()
-
-        if (member.user.presence.game) 
-            embed.addField('Currently playing', stripIndents`** Name:** ${member.user.presence.game.name}`);
-
-        message.channel.send(embed);
-    }
-}
+const Discord = require("discord.js"); 
+module.exports.run =async (bot, message, args) => { 
+  let inline = true let resence = true 
+  const status = { 
+    online: "<:online:806731119260205057> Online", 
+    idle: "<:idle:806731237627920404> Idle", 
+    dnd: "<:dnd:806731376908959805> Do Not Disturb", 
+    offline: "<:offline:806731149820559380> Offline/Invisible" } 
+    const member = message.mentions.users.first() || message.author 
+    const target = member 
+    if (member.bot) { bot = "<:bottag:806732345175703563> Yes"; 
+  } else { 
+    bot = "<:user:806733095570505759> No"; 
+  } 
+  let embed = new Discord.MessageEmbed() 
+.setAuthor(member.user.username) 
+.setThumbnail((target.displayAvatarURL)) 
+.setColor("RANDOM") 
+.addField("Full Username", `${member.username}#${member.discriminator}` , inline) 
+.addField("ID", member.id, inline) 
+.addField("Bot", `${bot}`,inline, true) 
+.addField("Status", `${status[member.presence.status]}`, inline, true) 
+.addField("Playing", `${member.presence.game ? `🎮 ${member.presence.game.name}` : "<a:no:806742164301807626> Not playing"}`,inline, true) 
+.addField("Joined Discord At", member.createdAt) 
+.setFooter(`Information about ${member.username}`) 
+.setTimestamp()
+message.channel.send(embed); message.delete(); } 
+module.exports.help = {
+   name: "whois" 
+  }
