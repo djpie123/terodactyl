@@ -10,7 +10,7 @@ module.exports.run =async (bot, message, args) => {
         offline: "<:offline:806731149820559380> Offline/Invisible"
       }
         
-const member = message.mentions.members.first() || message.guild.members.get(args[0]) || message.member;
+const member = message.mentions.members.first() 
 let target = message.mentions.users.first() || message.author
 
 if (member.user.bot === true) {
