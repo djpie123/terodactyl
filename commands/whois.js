@@ -1,6 +1,7 @@
 const Discord = require("discord.js"); 
 module.exports.run =async (bot, message, args) => { 
-  let inline = true let resence = true 
+  let inline = true 
+  let resence = true 
   const status = { 
     online: "<:online:806731119260205057> Online", 
     idle: "<:idle:806731237627920404> Idle", 
