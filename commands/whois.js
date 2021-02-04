@@ -23,7 +23,7 @@ if (member.bot) {
                 //.setAuthor(member.user.username)
                 .setThumbnail((target.displayAvatarURL))
                 .setColor("#00ff00")
-                .addField("Full Username", `${member.user.username}` + `#` + `${member.user.discriminator}` , inline)
+                .addField("Full Username", `${member.username}#${member.discriminator}` , inline)
                 .addField("ID", member.user.id, inline)
                 .addField("Nickname", `${member.nickname !== null ? `<:yes:425632265993846795> Nickname: ${member.nickname}` : "<:no:425632070036094986> None"}`, true)
                 .addField("Bot", `${bot}`,inline, true)
