@@ -8,7 +8,7 @@ number = 13;
         .setImage({files: ["./images/" + imageNumber + ".png"]})
         .setTimestamp()
         .setColor("RANDOM")
-        message.channel.send ({files: ["./images/" + imageNumber + ".png"]})
+        message.channel.send (embed)
     } 
 
 module.exports.help = {
