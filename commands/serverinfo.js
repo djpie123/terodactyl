@@ -1,41 +1,53 @@
-const Discord = require('discord.js');
+const online = ("<:online:806731119260205057>")
+const dnd = ("<:dnd:806731376908959805>")
+const invis = ("<:offline:806731149820559380>")
+const idle = ("<:idle:806731237627920404>")
+const bottag = ("<:bottag:806732345175703563>")
+const usertag = ("<:user:806733095570505759>")
+module.exports = {
+    name:"serverinfo",
+    async run (client, message, args) {
+        let roles = message.guild.roles.cache.sort((a, b) => b.position - a.position).map(role => role.toString());
+        let emojis = message.guild.emojis.cache;
+        let members = message.guild.members.cache;
+        let channels = message.guild.channels.cache;
+        let embed = new MessageEmbed()
+        .setTitle(`Information for ${message.guild.name}`)
+        .setThumbnail(message.guild.iconURL())
+        .setColor("RED")
+        .addField("Normal information", [
+            `**❯ Name**: ${message.guild.name}`,
+            `**❯ ID**: ${message.guild.id}`,
+            `**❯ Icon**: [click here](${message.guild.iconURL({dynamic: true})})`,
+            `**❯ Owner**: <@${message.guild.ownerID}>`,  
+            '\u200b'
+        ])
+        .addField('More information', [
+            `**❯ Membercount**: ${message.guild.memberCount}`,
+            `**❯ ${bottag}Bots**: ${members.filter(m => m.user.bot).size}`,
+            `**❯ ${usertag}Humans**: ${members.filter(m => !m.user.bot).size}`,
+            `**❯ Emoji count**: ${message.guild.emojis.cache.size}`,
+            `**❯ Animated Emoji count**: ${emojis.filter(e => e.animated).size}`,
+            `**❯ Not animated Emoji count**: ${emojis.filter(e => !e.animated).size}`,
+            `**❯ Role count**: ${roles.length}`,
+            `**❯ Channels**: ${message.guild.channels.cache.size}`,
+            `**❯ Text Channels**: ${channels.filter(ch => ch.type === "text").size}`,
+            `**❯ Voice Channels**: ${channels.filter(ch => ch.type === "voice").size}`,
+            `**❯ News Channels**: ${channels.filter(ch => ch.type === "news").size}`,
 
-function checkDays(date) {
-    let now = new Date();
-    let diff = now.getTime() - date.getTime();
-    let days = Math.floor(diff / 86400000);
-    return days + (days == 1 ? " day" : " days") + " ago";
-};
+           
 
-exports.run = (client, message) => {
-    let embed = new Discord.MessageEmbed();
-    let verifLevels = ["None", "Low", "Medium", "(╯°□°）╯︵  ┻━┻", "┻━┻ミヽ(ಠ益ಠ)ノ彡┻━┻"];
-    let region = {
-        "brazil": "Brazil",
-        "eu-central": "Central Europe",
-        "singapore": "Singapore",
-        "us-central": "U.S. Central",
-        "sydney": "Sydney",
-        "us-east": "U.S. East",
-        "us-south": "U.S. South",
-        "us-west": "U.S. West",
-        "eu-west": "Western Europe",
-        "vip-us-east": "VIP U.S. East",
-        "london": "London",
-        "amsterdam": "Amsterdam",
-        "hongkong": "Hong Kong"
-    };
-    embed.setAuthor(message.guild.name, message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
-        .setThumbnail(message.guild.iconURL ? message.guild.iconURL : client.user.displayAvatarURL)
-        .addField("Created", `${message.guild.createdAt.toString().substr(0, 15)},\n${checkDays(message.guild.createdAt)}`, true)
-        .addField("ID", message.guild.id, true)
-        .addField("Owner", `${message.guild.owner.user.username}#${message.guild.owner.user.discriminator}`, true)
-        .addField("Region", region[message.guild.region], true)
-        .addField("Members", message.guild.memberCount, true)
-        .addField("Roles", message.guild.roles.size, true)
-        .addField("Channels", message.guild.channels.size, true)
-        .setColor("RANDOM");
-    message.channel.send({ embed });
+            '\u200b'
+        ])
+        .addField("Statuses", [
+            `**❯ ${online}Online**: ${members.filter(m => m.presence.status === "online").size}`,
+            `**❯ ${idle}Idle**: ${members.filter(m => m.presence.status === "idle").size}`,
+            `**❯ ${dnd}Dnd**: ${members.filter(m => m.presence.status === "dnd").size}`,
+            `**❯ ${invis}Offline**: ${members.filter(m => m.presence.status === "offline").size}`,
+            '\u200b'
+        ])
+        message.channel.send(embed)
+    }
 }
 module.exports.help = {
   name: "serverinfo"
