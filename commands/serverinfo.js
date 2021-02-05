@@ -4,6 +4,7 @@ const invis = ("<:offline:806731149820559380>")
 const idle = ("<:idle:806731237627920404>")
 const bottag = ("<:bottag:806732345175703563>")
 const usertag = ("<:user:806733095570505759>")
+const {MessageEmbed} = require("discord.js")
 module.exports = {
     name:"serverinfo",
     async run (client, message, args) {
