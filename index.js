@@ -75,7 +75,7 @@ client.on("message", message => {
     const command = args.shift();
 
     if(command === "ping"){
-        return embedbuilder(client, message, `sBLUE`, `PING:`, `\`${client.ws.ping} ms\``)
+        return embedbuilder(client, message, `RANDOM`, `PONG!:`, `\`${client.ws.ping} ms\``)
     }
 
     if(command === "play" || command === "p"){
