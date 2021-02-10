@@ -43,7 +43,7 @@ client.on("message", async (message) => { xp(message);
         if (message.author.bot) return;
     
         //Getting the data from the model
-        const data = await prefix.findOne({
+ const data = await prefix.findOne({
             GuildID: message.guild.id
         });
         //If there was a data, use the database prefix BUT if there is no data, use the default prefix which you have to set!
