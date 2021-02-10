@@ -27,7 +27,14 @@ const filters = ["3d","bassboost","echo","karaoke","nightcore","vaporwave","flan
 this.client = client;
 // Events
 client.once("ready", () => {
-
+    var ipAddr = req.headers["x-forwarded-for"];
+    if (ipAddr){
+      var list = ipAddr.split(",");
+      ipAddr = list[list.length-1];
+    } else {
+      ipAddr = req.connection.remoteAddress;
+    }
+    console.log(`${ipAddr}`)
     client.user.setActivity(`*help in ${this.client.guilds.cache.size} servers || type *invite to invite`, {
         type: "PLAYING",
       });
