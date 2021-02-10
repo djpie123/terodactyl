@@ -27,6 +27,7 @@
     "jumble-words": "^1.0.1",
     "moment": "^2.29.1",
     "moment-duration-format": "^2.3.2",
+    "mongoose": "^5.10.3",
     "node-fetch": "^2.6.0",
     "node-superfetch": "^0.1.11",
     "quick.db": "^7.1.3",
