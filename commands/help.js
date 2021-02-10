@@ -350,7 +350,7 @@ module.exports.run = (client, message, args) => {
   .setFooter('THIS BOT IS MADE BY PIE IS LIVE 💕|| ')
   .setTimestamp()
  .setColor('RANDOM');
-        const botMessage = await message.reply(embed);
+        const botMessage = message.reply(embed);
         ReactionCollector.menu({ botMessage, user: message.author, pages });
     };
 module.exports.help = {
