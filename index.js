@@ -173,12 +173,6 @@ function embedbuilder(client, message, color, title, description){
 }
 
 const { ReactionCollector } = require('discord.js-collector')
-const { Client, MessageEmbed } = require("discord.js");
-const client = new Client();
-client.on("ready", () => {
-    console.log("ready");
-});
-
 const pages = {
     '➡️': {
         embed: {
@@ -518,7 +512,7 @@ color: "RANDOM",
   
 client.on("message", async (message) => {
     if (message.content.startsWith('>help')) 
-        const embed1 = new MessageEmbed()
+        const embed1 = new Discord.MessageEmbed()
            .setTitle('HELP')
            .setURL('https://discord.gg/HfkfcMS')
            .setAuthor('Terodactyl#6714', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB5OI1Ao0e2dJmvAhXcE_A9tMj14ittIq_wQ&usqp=CAU' )
