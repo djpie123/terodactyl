@@ -511,7 +511,7 @@ color: "RANDOM",
  
   
 client.on("message", async (message) => {
-    if (message.content.startsWith('>help')) 
+    if (message.content.startsWith('*help')) 
         const embed1 = new Discord.MessageEmbed()
            .setTitle('HELP')
            .setURL('https://discord.gg/HfkfcMS')
