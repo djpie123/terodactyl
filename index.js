@@ -3,13 +3,13 @@ const client = new Discord.Client();
 const fs = require("fs");
 const Snowflake = require("snowflake-api");
 client.db = require("quick.db");
+const prefix = require('discord-prefix');
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
 client.config = {
     TOKEN: process.env.token, //Discord Bot Token
     API_TOKEN: "NzA2NzE0ODUyNTcxMzQ4OTkz.MTYxMTg0MTM1NjY2Nw==.0150d78f668cc42489fc333cb2a73811", //API Token found at http://api.snowflakedev.cf:9019/dashboard
-    cooldown: 0,
-    prefix: "*"
+    cooldown: 0
 };
 const api = new Snowflake.Client(client.config.API_TOKEN);
 client.snowapi = api;
@@ -46,8 +46,11 @@ client.on("message", async (message) => {
     // Handle XP
     xp(message);
     // command handler
-    if (!message.content.startsWith(client.config.prefix)) return;
-    let args = message.content.slice(client.config.prefix.length).trim().split(" ");
+    let defaultPrefix = '*';
+    let guildPrefix = prefix.getPrefix(message.guild.id);
+    if (!guildPrefix) guildPrefix = defaultPrefix;
+    if (!message.content.startsWith(guildPrefix)) return;
+    let args = message.content.slice(guildPrefix).trim().split(" ");
     let command = args.shift().toLowerCase();
     let commandFile = client.commands.get(command);
     if (!commandFile) return;
