@@ -19,6 +19,7 @@
     "axios": "^0.21.1",
     "canvacord": "^5.0.4",
     "discord.js": "^12.2.0",
+    "discord.js-collector": "^1.8.7",
     "discord-prefix": "^2.0.0",
     "distube": "^2.7.0",
     "ffmpeg": "^0.0.4",
