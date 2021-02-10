@@ -511,8 +511,8 @@ color: "RANDOM",
  
   
 client.on("message", async (message) => {
-    if (message.content.startsWith('*help')) 
-        const embed1 = new Discord.MessageEmbed()
+    if (message.content.startsWith('*help')){ 
+         const embed1 = new Discord.MessageEmbed()
            .setTitle('HELP')
            .setURL('https://discord.gg/HfkfcMS')
            .setAuthor('Terodactyl#6714', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB5OI1Ao0e2dJmvAhXcE_A9tMj14ittIq_wQ&usqp=CAU' )
@@ -521,5 +521,6 @@ client.on("message", async (message) => {
             .setColor('RANDOM');
         const botMessage = await message.reply(embed1);
         ReactionCollector.menu({ botMessage, user: message.author, pages });
+    }
     });
 client.login(client.config.TOKEN);
