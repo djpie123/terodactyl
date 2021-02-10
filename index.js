@@ -6,6 +6,7 @@ client.db = require("quick.db");
 const prefix = require('discord-prefix');
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
+const DisTube = require('distube')
 client.config = {
     TOKEN: process.env.token, //Discord Bot Token
     API_TOKEN: "NzA2NzE0ODUyNTcxMzQ4OTkz.MTYxMTg0MTM1NjY2Nw==.0150d78f668cc42489fc333cb2a73811", //API Token found at http://api.snowflakedev.cf:9019/dashboard
