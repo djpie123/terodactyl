@@ -136,12 +136,10 @@ client.on("message", message => {
 	if(command === "lyrics"){
 		let queue = distube.getQueue(message);
         let curqueue = queue.songs.map((song) =>{
-			try {
-			  lyric = await lyricsFinder(song.name, "")
-			} catch (error) {
-			  embedbuilder(client, message, "RED", "ERROR", `Not found`)
-			  console.log(error)
-			}
+			var title = `${song.name}`,
+			const author = " ",
+			(async function(artist, title) {
+			 let lyric = await lyricsFinder(artist, title) || "Not Found!";
 		      const lyrics = new Discord.MessageEmbed()
 		     .setTitle(`${song.name} lyrics`)
 		     .setDescription(lyric)
@@ -152,9 +150,9 @@ client.on("message", message => {
 		
 	
 	 }	     
-	
+	)})}});
 
-		)}});
+		
 //queue
 const status = (queue) => `Volume: \`${queue.volume}\` | Filter: \`${queue.filter || "OFF"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
 //distube
