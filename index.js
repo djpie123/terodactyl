@@ -132,8 +132,25 @@ client.on("message", message => {
 
     
     }
+	if(command === "lyrics"){
+		var artist = "";
+        var title = `${song.name}`;
+		ftl.find(artist, title, function(err, resp) {
+		const lyrics = new Discord.MessageEmbed
+		.setTitle(`${song.name} lyrics`)
+		.setDescription(resp)
+		if(!err){
+		 message.channel.send(lyrics)
+		}
+		 else{
+			 console.log(err)
+	 }	     embedbuilder(client, message, "RED", "ERROR", `Not found`)	
+	
+		
+	
+	
 
-});
+})}});
 //queue
 const status = (queue) => `Volume: \`${queue.volume}\` | Filter: \`${queue.filter || "OFF"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
 //distube
