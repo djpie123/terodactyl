@@ -6,7 +6,6 @@ client.db = require("quick.db");
 const prefix = require('discord-prefix');
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
-const lyricsFinder = require('lyrics-finder');
 const DisTube = require('distube')
 client.config = {
     TOKEN: process.env.token, //Discord Bot Token
@@ -133,24 +132,13 @@ client.on("message", message => {
 
     
     }
-	if(command === "lyrics"){
-		let queue = distube.getQueue(message);
-        let curqueue = queue.songs.map((song) =>{
-			var title = `${song.name}`
-			var artist = " "
-			(async function(artist, title) {
-			 let lyric = await lyricsFinder(artist, title) || "Not Found!";
-		      const lyrics = new Discord.MessageEmbed()
-		     .setTitle(`${song.name} lyrics`)
-		     .setDescription(lyric)
-		      message.channel.send(lyrics)
-		
+	
 			 c	
 	
 		
 	
 	 }	     
-	)})}});
+	);
 
 		
 //queue

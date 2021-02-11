@@ -11,7 +11,7 @@ const VOTE = new Discord.MessageEmbed()
 
 module.exports.run = (client, message, args) => {
    message.author.send(VOTE)
- return message.channel.send('check your dms <a:Hearts1:805714587453620265>');
+ return message.channel.send('check your dms <a:vote:809283309796065300>');
 
 
 }
