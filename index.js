@@ -298,6 +298,11 @@ fields: [
 			value: 'TO add me to ur server',
 			inline: true,
 		},
+		{
+			name: '*vote',
+			value: 'TO give me some support',
+			inline: true,
+		},
                 {
 			name: 'HOW CAN I REPORT BUGS??',
 			value: 'JUST DM PIE_IS_LIVE#9325 ABOUT IT',
@@ -365,6 +370,11 @@ fields: [
                 {
 			name: '*invite',
 			value: 'TO add me to ur server',
+			inline: true,
+		},
+		{
+			name: '*vote',
+			value: 'TO give me some support',
 			inline: true,
 		},
                 {
@@ -509,6 +519,11 @@ color: "RANDOM",
 			value: 'TO add me to ur server',
 			inline: true,
 		},
+		{
+			name: '*vote',
+			value: 'TO give me some support',
+			inline: true,
+		},	
                 {
 			name: 'HOW CAN I REPORT BUGS??',
 			value: 'JUST DM PIE_IS_LIVE#9325 ABOUT IT',
@@ -544,4 +559,12 @@ client.on("message", async (message) => {
         ReactionCollector.menu({ botMessage, user: message.author, pages });
     }
     });
+	const DBL = require('dblapi.js');
+const dbl = new DBL(yourDBLTokenHere, {webhookURL:"https://discord.com/api/webhooks/809274958567178270/cCqr5Ss7-JAxSUljsUGNqSSaN5o2GXKZvR9yjhoEe3q0NDAH-LmKsRR98dzk02QCUFez"});
+dbl.webhook.on('ready', hook => {
+  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
+});
+dbl.webhook.on('vote', vote => {
+  console.log(`User with ID ${vote.user} just voted!`);
+});
 client.login(client.config.TOKEN);
