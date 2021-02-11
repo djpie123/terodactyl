@@ -6,7 +6,7 @@ client.db = require("quick.db");
 const prefix = require('discord-prefix');
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
-const ftl = require("findthelyrics");
+const lyricsFinder = require('lyrics-finder');
 const DisTube = require('distube')
 client.config = {
     TOKEN: process.env.token, //Discord Bot Token
@@ -136,25 +136,25 @@ client.on("message", message => {
 	if(command === "lyrics"){
 		let queue = distube.getQueue(message);
         let curqueue = queue.songs.map((song) =>{
-		var artist = "";
-        var title = `${song.name}`;
-		ftl.find(artist, title, function(err, resp) {
-		const lyrics = new Discord.MessageEmbed()
-		.setTitle(`${song.name} lyrics`)
-		.setDescription(resp)
-		if(!err){
-		 message.channel.send(lyrics)
-		}
-		else{
-			 console.log(err)
-	 }	     embedbuilder(client, message, "RED", "ERROR", `Not found`)	
+			try {
+			  lyric = await lyricsFinder(song.name, "")
+			} catch (error) {
+			  embedbuilder(client, message, "RED", "ERROR", `Not found`)
+			  console.log(error)
+			}
+		      const lyrics = new Discord.MessageEmbed()
+		     .setTitle(`${song.name} lyrics`)
+		     .setDescription(lyric)
+		      message.channel.send(lyrics)
+		
+			 c	
 	
 		
 	
+	 }	     
 	
 
-})
-})}});
+		)}});
 //queue
 const status = (queue) => `Volume: \`${queue.volume}\` | Filter: \`${queue.filter || "OFF"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
 //distube
@@ -559,12 +559,4 @@ client.on("message", async (message) => {
         ReactionCollector.menu({ botMessage, user: message.author, pages });
     }
     });
-	const DBL = require('dblapi.js');
-const dbl = new DBL(yourDBLTokenHere, {webhookURL:"https://discord.com/api/webhooks/809274958567178270/cCqr5Ss7-JAxSUljsUGNqSSaN5o2GXKZvR9yjhoEe3q0NDAH-LmKsRR98dzk02QCUFez"});
-dbl.webhook.on('ready', hook => {
-  console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
-});
-dbl.webhook.on('vote', vote => {
-  console.log(`User with ID ${vote.user} just voted!`);
-});
 client.login(client.config.TOKEN);
