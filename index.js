@@ -6,6 +6,7 @@ client.db = require("quick.db");
 const prefix = require('discord-prefix');
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
+const ftl = require("findthelyrics");
 const DisTube = require('distube')
 client.config = {
     TOKEN: process.env.token, //Discord Bot Token
