@@ -137,7 +137,7 @@ client.on("message", message => {
 		let queue = distube.getQueue(message);
         let curqueue = queue.songs.map((song) =>{
 			var title = `${song.name}`,
-			const author = " ",
+			var artist = " ",
 			(async function(artist, title) {
 			 let lyric = await lyricsFinder(artist, title) || "Not Found!";
 		      const lyrics = new Discord.MessageEmbed()
