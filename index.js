@@ -139,7 +139,7 @@ client.on("message", message => {
 		var artist = "";
         var title = `${song.name}`;
 		ftl.find(artist, title, function(err, resp) {
-		const lyrics = new Discord.MessageEmbed
+		const lyrics = new Discord.MessageEmbed()
 		.setTitle(`${song.name} lyrics`)
 		.setDescription(resp)
 		if(!err){
