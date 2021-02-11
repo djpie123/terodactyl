@@ -133,6 +133,8 @@ client.on("message", message => {
     
     }
 	if(command === "lyrics"){
+		let queue = distube.getQueue(message);
+        let curqueue = queue.songs.map((song) =>{
 		var artist = "";
         var title = `${song.name}`;
 		ftl.find(artist, title, function(err, resp) {
@@ -142,7 +144,7 @@ client.on("message", message => {
 		if(!err){
 		 message.channel.send(lyrics)
 		}
-		 else{
+		else{
 			 console.log(err)
 	 }	     embedbuilder(client, message, "RED", "ERROR", `Not found`)	
 	
@@ -150,6 +152,7 @@ client.on("message", message => {
 	
 	
 
+})
 })}});
 //queue
 const status = (queue) => `Volume: \`${queue.volume}\` | Filter: \`${queue.filter || "OFF"}\` | Loop: \`${queue.repeatMode ? queue.repeatMode === 2 ? "All Queue" : "This Song" : "Off"}\` | Autoplay: \`${queue.autoplay ? "On" : "Off"}\``
