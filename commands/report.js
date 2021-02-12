@@ -1,6 +1,4 @@
 const {MessageEmbed} = require("discord.js");
-
-const {MessageEmbed} = require("discord.js")
 exports.run = (client, message) => { 
     let user = message.author;
     let args = message.content.split(" ").slice(1);
