@@ -1,5 +1,4 @@
 const { MessageEmbed } = require('discord.js')
-const boom = require(".")
 module.exports = {
     name: "nuke",
     description: "Nukes a given channel",
@@ -16,7 +15,7 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Channel Nuked")
         .setDescription(reason)
-        .setImage(`https://i.imgur.com/Hcv0dro.gif`({dynamic: true}), 200, 200)
+        .setImage(`./boom.gif`({dynamic: true}), 200, 200)
         .setColor("RANDOM")
         await newchannel.send(embed)
     }
