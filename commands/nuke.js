@@ -1,7 +1,5 @@
 const { MessageEmbed } = require('discord.js')
 module.exports = {
-    name: "nuke",
-    description: "Nukes a given channel",
     run: async(client, message, args) => {
         if(!message.member.hasPermission("ADMINISTRATOR")) {
             return message.reply("You do not have the perms to use this cmd!")
@@ -10,8 +8,9 @@ module.exports = {
         if(!message.channel.deletable) {
             return message.reply("This channel cannot be nuked!")
         }
+        let pos = message.channel.getPosition("")
         let newchannel = await message.channel.clone()
-        newchannel.setPosition(message.channel)
+        newchannel.setPosition(pos)
         await message.channel.delete()
         let embed = new MessageEmbed()
         .setTitle("Channel Nuked")
