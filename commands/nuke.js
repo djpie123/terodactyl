@@ -16,7 +16,7 @@ module.exports = {
         let embed = new MessageEmbed()
         .setTitle("Channel Nuked")
         .setDescription(reason)
-        .setImage(`./boom.gif`)
+        .setImage(`https://i.imgur.com/Hcv0dro.gif`({dynamic: true}), 200, 200)
         .setColor("RANDOM")
         await newchannel.send(embed)
     }
