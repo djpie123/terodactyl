@@ -545,8 +545,9 @@ client.on("message", async (message) => {
         ReactionCollector.menu({ botMessage, user: message.author, pages });
     }
     });
-	const roleName = message.guild.roles.cache.find(r => (r.name === "level1") || (r.id === "803825175702798376"));
+	
 client.on("message", message =>{
+	const roleName = message.guild.roles.cache.find(r => (r.name === "level1") || (r.id === "803825175702798376"));
 	if(message.content.startsWith("*give"))
 	message.author.roles.add(roleName).then(() =>(
 	message.channel.send("given")))
