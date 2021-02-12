@@ -11,11 +11,13 @@ module.exports = {
             return message.reply("This channel cannot be nuked!")
         }
         let newchannel = await message.channel.clone()
+        newchannel.setPosition(message.channel)
         await message.channel.delete()
         let embed = new MessageEmbed()
         .setTitle("Channel Nuked")
         .setDescription(reason)
-        .setImage('https://i.imgur.com/4mJ3qcQ.gif')
+        .setImage("https://i.imgur.com/4mJ3qcQ.gif")
+        .setColor("RANDOM")
         await newchannel.send(embed)
     }
 }
