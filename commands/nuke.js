@@ -8,9 +8,8 @@ module.exports = {
         if(!message.channel.deletable) {
             return message.reply("This channel cannot be nuked!")
         }
-        let pos = message.channel.position 
         let newchannel = await message.channel.clone()
-        newchannel.setPosition(pos)
+        newchannel.setPosition(message.channel.position)
         await message.channel.delete()
         let embed = new MessageEmbed()
         .setTitle("Channel Nuked")
