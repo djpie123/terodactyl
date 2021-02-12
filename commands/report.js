@@ -5,17 +5,11 @@ exports.run = (client, message) => {
     message.react("☑️"); 
     if (args.join(" ") === "@everyone" || args.join(" ") === "@here") return message.channel.send("You ain't making me Ping anyone BOI!"); 
     let bug = new MessageEmbed()
-    .setTitle(`${user.username}#${user.discriminator} has reprted a bug`)
+    .setTitle(`${user.username}#${user.discriminator} has reported a bug`)
     .setDescription(args.join(" "))
+    .setColor("RANDOM")
    client.users.cache.get("706714852571348993").send(bug); 
-};
-
-exports.conf = {
-    enabled: true,
-    guildOnly: false,
-    aliases: [], 
-    permLevel: 0
-};
+}
 
 module.exports.help = {
     name: "report"
