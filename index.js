@@ -291,7 +291,7 @@ fields: [
 		},
                 {
 			name: 'HOW CAN I REPORT BUGS??',
-			value: 'JUST DM PIE_IS_LIVE#9325 ABOUT IT',
+			value: 'JUST TYPE *report <bug>',
 			inline: true,
 		},
                 {
@@ -365,7 +365,7 @@ fields: [
 		},
                 {
 			name: 'HOW CAN I REPORT BUGS??',
-			value: 'JUST DM PIE_IS_LIVE#9325 ABOUT IT',
+			value: 'JUST TYPE *report <bug>',
 			inline: true,
 		},
 	],
@@ -512,7 +512,7 @@ color: "RANDOM",
 		},	
                 {
 			name: 'HOW CAN I REPORT BUGS??',
-			value: 'JUST DM PIE_IS_LIVE#9325 ABOUT IT',
+			value: 'JUST TYPE *report <bug>',
 			inline: true,
 		},
 	],
