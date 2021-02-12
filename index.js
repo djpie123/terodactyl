@@ -258,25 +258,30 @@ fields: [
 			value: "to get someone's stats",
                         inline: true,
 		},
- {
+       {
 			name: '*serverinfo',
 			value: 'to get serverinfo',
                         inline: true,
 		},
  
- {
+        {
 			name: '*warn',
 			value: 'to warn someone',
                         inline: true,
 		},
- {
+        {
 			name: '*warnings',
 			value: "to get someone's warning count",
                         inline: true,
 		},
- {
+        {
 			name: '*resetwarns',
 			value: 'to reset the count of warnings of a person',
+                        inline: true,
+		},
+		{
+			name: '*nuke',
+			value: 'to nuke a channel',
                         inline: true,
 		},
                 {
