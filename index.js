@@ -13,6 +13,8 @@ client.config = {
     cooldown: 0,
     prefix: "*"
 };
+const welcome = require("./welcome");
+welcome(client);
 const api = new Snowflake.Client(client.config.API_TOKEN);
 client.snowapi = api;
 const distube = new DisTube(client, {searchSongs: true, emitNewSongOnly: true, highWaterMark: 1<<25})
