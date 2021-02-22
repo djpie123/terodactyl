@@ -15,6 +15,7 @@ module.exports = {
         .setTitle("BOOOOOM")
         .setDescription(reason)
         .setImage("https://i.imgur.com/4mJ3qcQ.gif")
+        .setColor("RANDOM")
         await newchannel.send(em)
     }
 }
