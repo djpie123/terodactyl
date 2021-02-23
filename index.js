@@ -282,6 +282,11 @@ fields: [
                         inline: true,
 		},
 		{
+			name: '*poll {Title} {time} [Option 1] [Option 2] [Option 3] ',
+			value: 'upto 20 options is acceptable. \n eg :- \n *poll {some title} {30s} [Option 1] [Option 2] [Option 3]',
+                        inline: true,
+		},
+		{
 			name: '*nuke',
 			value: 'to nuke a channel',
                         inline: true,
