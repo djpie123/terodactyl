@@ -2,15 +2,10 @@ const { MessageAttachment } = require("discord.js");
 const canvacord = require("canvacord");
 
 module.exports.run = async (client, message, args) => {
-  let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
-
-  let level = client.db.get(`level_${user.id}`) || 0;
-  let exp = client.db.get(`xp_${user.id}`) || 0;
-  let neededXP = Math.floor(Math.pow(level / 0.1, 2));
-
-  let every = client.db.all().filter(i => i.ID.startsWith("xp_")).sort((a, b) => b.data - a.data);
-  let rank = every.map(x => x.ID).indexOf(`xp_${user.id}`) + 1;
-
+  let member = message.mentions.members.first();
+  let userInfo = db[message.author.id] || db[member.id]
+  const user = message.author || member
+  const neededXP = "100"
 // v4 rank card
 //   let img = await canvacord.rank({
 //     username: user.username,
@@ -27,9 +22,8 @@ module.exports.run = async (client, message, args) => {
   const card = new canvacord.Rank()
     .setUsername(user.username)
     .setDiscriminator(user.discriminator)
-    .setRank(rank)
-    .setLevel(level)
-    .setCurrentXP(exp)
+    .setLevel(userInfo.level)
+    .setCurrentXP(userInfo.xp)
     .setRequiredXP(neededXP)
     .setStatus(user.presence.status)
     .setAvatar(user.displayAvatarURL({ format: "png", size: 1024 }))
