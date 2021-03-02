@@ -1,5 +1,5 @@
 const {MessgaeEmbed} = require('discord.js')
-const db = require('quick.db')
+const db = require('/db.js')
 module.exports = {
     name: "warn",
     category: "moderation",
