@@ -27,7 +27,7 @@ module.exports.run = async (client, message, args) => {
  .setBackground("IMAGE", `${cArgs}`);
 
   const img = await card.build();
- message.channel.send(`You have successfully set ${cArgs} as your Rank card `).then(
+ message.channel.send(`You have successfully set _${cArgs}_ as your Rank card `).then(
      message.channel.send(`Preview :-`),
      message.channel.send(new Discord.MessageAttachment(img, "rank.png"))
  )
