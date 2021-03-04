@@ -7,7 +7,7 @@ const db = new reconDB({
             return message.channel.send(`You cannot use this command!`)
         }
         db.set("users", args(1)).then(
-        await message.channel.send(`successfully added user <@${args(1)}>`)
+         message.channel.send(`successfully added user <@${args(1)}>`)
         ) 
     }
 

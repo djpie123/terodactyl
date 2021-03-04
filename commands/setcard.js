@@ -3,6 +3,10 @@ const db = require("quick.db")
 const canvacord = require("canvacord")
 
 module.exports.run = async (client, message, args) => {
+  let premium = Db.get("user")
+  if (message.author.id !== premium){
+    return message.channel.send(`This is a premium command pleas buy and retry`)
+  }
  let cArgs = args[0]
  let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
 
