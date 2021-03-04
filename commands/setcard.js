@@ -2,22 +2,29 @@ const Discord = require('discord.js')
 const db = require("quick.db")
 const canvacord = require("canvacord")
 
-module.exports.run = async (bot, message, args) => {
+module.exports.run = async (client, message, args) => {
  let cArgs = args[0]
-	 
- try{
-	 
+ let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
+
+ let level = client.db.get(`level_${user.id}`) || 0;
+ let exp = client.db.get(`xp_${user.id}`) || 0;
+ let neededXP = Math.floor(Math.pow(level / 0.1, 2));
+
+ let every = client.db.all().filter(i => i.ID.startsWith("xp_")).sort((a, b) => b.data - a.data);
+ let rank = every.map(x => x.ID).indexOf(`xp_${user.id}`) + 1;
+    
+ try{	 
  db.set(`${message.author.id}`, cArgs)
  const card = new canvacord.Rank()
-    .setUsername(message.author.username)
-    .setDiscriminator(message.author.discriminator)
-    .setRank("1")
-    .setLevel("2000")
-    .setCurrentXP("3000")
-    .setRequiredXP("4000")
-    .setStatus(message.author.presence.status)
-    .setAvatar(message.author.displayAvatarURL({ format: "png", size: 1024 }))
-    .setBackground("IMAGE", `${cArgs}`);
+ .setUsername(user.username)
+ .setDiscriminator(user.discriminator)
+ .setRank(rank)
+ .setLevel(level)
+ .setCurrentXP(exp)
+ .setRequiredXP(neededXP)
+ .setStatus(user.presence.status)
+ .setAvatar(user.displayAvatarURL({ format: "png", size: 1024 }))
+ .setBackground("IMAGE", `${cArgs}`);
 
   const img = await card.build();
  message.channel.send(`You have successfully set ${cArgs} as your Rank card `).then(
@@ -32,5 +39,5 @@ return;
  
 }
 module.exports.help = {
-  name: "channel"
+  name: "setcard"
 }
