@@ -1,7 +1,12 @@
 const { MessageAttachment } = require("discord.js");
-const canvacord = require("canvacord");
-
+const canvacord = require("canvacord")
 module.exports.run = async (client, message, args) => {
+  const db = client.db
+  let c = db.fetch(`${message.author.id}`)
+	
+	if(c == null) c = "https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80";
+	
+	if(!c) return;
   let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
 
   let level = client.db.get(`level_${user.id}`) || 0;
@@ -33,7 +38,7 @@ module.exports.run = async (client, message, args) => {
     .setRequiredXP(neededXP)
     .setStatus(user.presence.status)
     .setAvatar(user.displayAvatarURL({ format: "png", size: 1024 }))
-    .setBackground("IMAGE", 'https://i.pinimg.com/originals/96/fa/f2/96faf2d86ce88e7a25fc4b3913172043.jpg');
+    .setBackground("IMAGE", `${c}`);
 
   const img = await card.build();
   
