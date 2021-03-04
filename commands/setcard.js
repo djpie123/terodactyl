@@ -21,10 +21,11 @@ module.exports.run = async (bot, message, args) => {
 
   const img = await card.build();
  message.channel.send(`You have successfully set ${cArgs} as your Rank card `).then(
-     message.channel.send(`Preview :- \n ${img}`)
+     message.channel.send(`Preview :- \n ${new MessageAttachment(img, "rank.png")}`)
  )
 return;
  }catch(e){
+     console.log(e)
 	return message.channel.send("Please provide a valid image url")
  }
  
