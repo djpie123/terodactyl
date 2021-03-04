@@ -2,8 +2,8 @@ const Discord = require('discord.js')
 const db = require("quick.db")
 const canvacord = require("canvacord")
 
-module.exports.run = async (client, message, args, Db) => {
-  let premium = Db.get("user")
+module.exports.run = async (client, message, args, cdb) => {
+  let premium = cdb.get("user")
   if (message.author.id !== premium){
     return message.channel.send(`This is a premium command pleas buy and retry`)
   }

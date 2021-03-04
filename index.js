@@ -8,7 +8,7 @@ client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
 const DisTube = require('distube')
 const { reconDB } = require("reconlx");
-const Db = new reconDB({
+const cdb = new reconDB({
     uri: process.env.url,
   });
 client.config = {
