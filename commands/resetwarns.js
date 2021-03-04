@@ -1,4 +1,4 @@
-const db = require("/db.js")
+
 
 module.exports = {
   name: "resetwarns",
@@ -6,7 +6,7 @@ aliases: ["rwarns"],
 usage: "rwarns <@user>",
 description: "Reset warnings of mentioned person",
 run: async (client, message, args) => {
-  
+  const db = client.db
   
   if(!message.member.hasPermission("ADMINISTRATOR")) {
     return message.channel.send("Yopu should have admin perms to use this command")

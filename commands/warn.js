@@ -1,12 +1,11 @@
 const {MessgaeEmbed} = require('discord.js')
-const db = require('/db.js')
 module.exports = {
     name: "warn",
     category: "moderation",
     usage: "warn <@mention> <reason>",
     description: "Warn anyone who do not obey the rules",
     run: async (client, message, args) => {
-      
+      const db = client.db
       if(!message.member.hasPermission("ADMINISTRATOR")) {
         return message.channel.send("You should have admin perms to use this command!")
       }
