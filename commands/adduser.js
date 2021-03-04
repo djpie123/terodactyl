@@ -1,6 +1,6 @@
 const { reconDB } = require("reconlx");
 const db = new reconDB({
-    uri: process.eventNames.url,
+    uri: process.env.url,
   });
   module.exports.run = (client, message, args) => {
         if (message.author.id !== '706714852571348993') {
