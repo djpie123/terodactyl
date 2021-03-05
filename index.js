@@ -7,10 +7,9 @@ const prefix = require('discord-prefix');
 client.commands = new Discord.Collection();
 client.cooldown = new Discord.Collection();
 const DisTube = require('distube')
-const { reconDB } = require("reconlx");
-const cdb = new reconDB({
-    uri: process.env.url,
-  });
+const GiveawayCreator = require('../discord-giveaway/GiveawayCreator.js');
+const Creator = new GiveawayCreator(client, process.env.url);
+client.giveaways = Creator
 client.config = {
     TOKEN: process.env.token, //Discord Bot Token
     API_TOKEN: "NzA2NzE0ODUyNTcxMzQ4OTkz.MTYxMTg0MTM1NjY2Nw==.0150d78f668cc42489fc333cb2a73811", //API Token found at http://api.snowflakedev.cf:9019/dashboard
