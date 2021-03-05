@@ -50,12 +50,13 @@ class GiveawayCreator extends EventEmitter {
 
         const guild = this.client.guilds.cache.get(options.guildId);
         const channel = guild.channels.cache.get(options.channelId);
-        
+        const hosted = "<a:host:817385573819219978>"
+        const winmoji = "<a:win:817382072116445205>"
         const giveawayEmbed = new Discord.MessageEmbed()
         .setAuthor(options.prize)
         .setColor("RANDOM")
-        .setDescription(`🎖️ Winners: ${options.winners}
-        🥳 Hosted By: ${this.client.users.cache.get(options.hostedBy).toString()}`)
+        .setDescription(`${winmoji} Winners: ${options.winners}
+        ${hosted} Hosted By: ${this.client.users.cache.get(options.hostedBy).toString()}`)
         .setFooter(`Ends ${moment.utc(new Date(Date.now() + options.duration)).format('lll')}`);
 
         const msg = await channel.send(giveawayEmbed);
