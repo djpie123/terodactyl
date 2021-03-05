@@ -98,7 +98,11 @@ class GiveawayCreator extends EventEmitter {
         if (!job) return false;
 
         job.cancel();
-
+      if(finalWinners = 1){
+          const win = "Winner"
+      }else{
+          win = "Winners"
+      }
         const channel = this.client.channels.cache.get(data.channelId);
         if (channel) {
             const message = await channel.messages.fetch(messageId);
@@ -119,7 +123,7 @@ class GiveawayCreator extends EventEmitter {
                     else {
                         finalWinners = winner.map(user => user.toString()).join(', ');
                     }
-                    embed.setDescription(`${winmoji} Winner(s): ${finalWinners}`);
+                    embed.setDescription(`${winmoji} **${win}: ${finalWinners}`);
                     embed.setFooter(`${this.client.user.username, this.client.user.displayAvatarURL({ format: 'png', size: 512 })} \n`);
                     await message.edit(embed);
                     if (!winner) {
