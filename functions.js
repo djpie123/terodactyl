@@ -1,5 +1,5 @@
 const scheduler = require('node-schedule');
-const GiveawayModel = require('./models/GiveawayModel');
+const GiveawayModel = require('./models/GiveawayModel.js');
 
 function getWinner(users, max) {
     if (users.length < 1) return false;
