@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 const Giveaway = require('./Giveaway');
 const moment = require('moment');
 const { schedule, getWinner, endGiveaway } = require('./functions');
-const GiveawayModel = require('../models/GiveawayModel');
+const GiveawayModel = require('../models/GiveawayModel.js');
 const scheduler = require('node-schedule');
 const { EventEmitter } = require('events');
 

@@ -1,4 +1,4 @@
-const GiveawayModel = require('../models/GiveawayModel');
+const GiveawayModel = require('../models/GiveawayModel.js');
 
 class Giveaway {
     /**
