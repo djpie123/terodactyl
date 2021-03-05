@@ -75,7 +75,7 @@ class GiveawayCreator extends EventEmitter {
             hostedBy: options.hostedBy
         });
 
-        msg.channel.send('Created the giveaway. 🎉');
+       
         await schedule(this, [newGiveaway]);
         this.emit('giveawayStart', newGiveaway);
         return newGiveaway;
@@ -119,8 +119,8 @@ class GiveawayCreator extends EventEmitter {
                     else {
                         finalWinners = winner.map(user => user.toString()).join(', ');
                     }
-                    embed.setDescription(`🎖️ Winner(s): ${finalWinners}`);
-                    embed.setFooter(this.client.user.username, this.client.user.displayAvatarURL({ format: 'png', size: 512 }));
+                    embed.setDescription(`${winmoji} Winner(s): ${finalWinners}`);
+                    embed.setFooter(`${this.client.user.username, this.client.user.displayAvatarURL({ format: 'png', size: 512 })} \n`);
                     await message.edit(embed);
                     if (!winner) {
                         message.channel.send(`Nobody reacted to the **${data.prize}** giveaway. **ID**: \`${messageId}\`\n${message.url}`);

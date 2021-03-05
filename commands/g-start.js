@@ -1,7 +1,6 @@
 const ms = require("ms");
 const num = require("num-parse");
 module.exports.run = async (client, message, args) => {
-        if (!message.member.hasPermission("MANAGE_GUILD")) return message.channel.send("❌ | You don't have `MANAGE_GUILD` permission or `Giveaway` role to create giveaways!");
         let time = args[0];
         if (!time) return message.channel.send("❌ | Please provide valid time. Eg: `1h`, `1d` etc.");
         let winners = parseInt(args[1]);
