@@ -39,12 +39,12 @@ module.exports.run = async (client, message, args) => {
       ctx.fillStyle = '#f2f2f2';
       ctx.fillText(textString2, 730, canvas.height / 2 + 58);
       //define the Member count
-      var textString4 = `Member #${member.guild.memberCount}`;
+      var textString4 = `Member #${message.guild.memberCount}`;
       ctx.font = 'bold 60px "Roboto"';
       ctx.fillStyle = '#f2f2f2';
       ctx.fillText(textString4, 750, canvas.height / 2 + 125);
       //get the Guild Name
-      var textString4 = `${member.guild.name}`;
+      var textString4 = `${message.guild.name}`;
       ctx.font = 'bold 60px "Roboto"';
       ctx.fillStyle = '#f2f2f2';
       ctx.fillText(textString4, 700, canvas.height / 2 - 150);
