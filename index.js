@@ -294,6 +294,16 @@ fields: [
 			value: 'to nuke a channel',
                         inline: true,
 		},
+		{
+			name: '*setcard (it is a premium feature)',
+			value: 'TO set your own custom rank card',
+			inline: true,
+		},
+		{
+			name: '*setw-card (it is a premium feature)',
+			value: 'TO set custom welcome card for your server',
+			inline: true,
+		},
                 {
 			name: '*invite',
 			value: 'TO add me to ur server',
@@ -514,6 +524,11 @@ color: "RANDOM",
 			name: '*dinosaur',
 			value: 'to get a dinosaur image',
                         inline: true,
+		},
+		{
+			name: '*ticktactoe',
+			value: 'TO play ticktactoe with someone',
+			inline: true,
 		},
                 {
 			name: '*invite',
