@@ -1,4 +1,3 @@
-setw-card
 const Discord = require('discord.js')
 const db = require("quick.db")
 const Canvas = require("canvas")
@@ -69,3 +68,7 @@ module.exports.run = async (client, message, args) => {
     return message.channel.send("Please provide a valid image url")
  }
 }
+
+module.exports.help = {
+    name: "setw-card"
+  }
