@@ -5,7 +5,7 @@ const canvacord = require("canvacord")
 module.exports.run = async (client, message, args) => {
   let premium = '706714852571348993'
   if (message.author.id !== premium){
-    return message.channel.send(`This is a premium command pleas buy and retry`)
+    return message.channel.send(`This is a premium command please buy and retry _https://terodactyl.repl.co/premium.html_`)
   }
  let cArgs = args[0]
  let user = message.mentions.users.first() || client.users.cache.get(args[0]) || message.author;
