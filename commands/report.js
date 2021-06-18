@@ -7,8 +7,10 @@ exports.run = (client, message) => {
     let bug = new MessageEmbed()
     .setTitle(`${user.username}#${user.discriminator} has reported a bug`)
     .setDescription(args.join(" "))
-    .setColor("RANDOM")
-   client.users.cache.get("706714852571348993").send(bug); 
+    .setColor("RANDOM");
+  const g = client.guilds.cache.get("828452877071941702")
+      const ch = g.channels.cache.get('828460004766908446')
+ch.send(bug)
 }
 
 module.exports.help = {

@@ -1,9 +1,9 @@
-const online = ("<:online:806731119260205057>")
-const dnd = ("<:dnd:806731376908959805>")
-const invis = ("<:offline:806731149820559380>")
-const idle = ("<:idle:806731237627920404>")
-const bottag = ("<:bottag:806732345175703563>")
-const usertag = ("<:user:806733095570505759>")
+const online = ("<:online:836140917206286356>")
+const dnd = ("<:dnd:836140916766408775>")
+const invis = ("<:offline:836140917378646017>")
+const idle = ("<:idle:836140916250378271>")
+const bottag = ("<:bottag:836141332154023967>")
+const usertag = ("<:user:836140919131865120>")
 const {MessageEmbed} = require("discord.js")
 module.exports = {
     name:"serverinfo",

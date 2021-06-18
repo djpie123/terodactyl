@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Discord = require('discord.js');
-const Giveaway = require('./Giveaway');
+const Giveaway = require('./Giveaway.js');
 const moment = require('moment');
-const { schedule, getWinner, endGiveaway } = require('./functions');
+const { schedule, getWinner, endGiveaway } = require('./functions.js');
 const GiveawayModel = require('./GiveawayModel.js');
 const scheduler = require('node-schedule');
 const { EventEmitter } = require('events');
@@ -14,7 +14,7 @@ class GiveawayCreator extends EventEmitter {
      * @param {string} url - A MongoDB connection string.
      */
 
-    constructor(client, url = '') {
+    constructor(client, url = '', emoji = '🎉') {
         super();
 
         if (!client) throw new Error("A client wasn't provided.");
@@ -23,8 +23,13 @@ class GiveawayCreator extends EventEmitter {
         this.client = client;
 
         this.mongoUrl = url;
+        
+        this.emoji = emoji;
 
-        mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
+        mongoose.connect(this.mongoUrl, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
 
         this.client.on('ready', async () => {
             const now = new Date();
@@ -59,10 +64,9 @@ class GiveawayCreator extends EventEmitter {
         ${hosted} Hosted By: ${this.client.users.cache.get(options.hostedBy).toString()}`)
         .setFooter(`Ends ${moment.utc(new Date(Date.now() + options.duration)).format('lll')}`);
 
-        const msg = await channel.send(giveawayEmbed);
-
-        await msg.react('🎉');
-        
+      const msg = await channel.send(giveawayEmbed);
+        const g = this.client.guilds.cache.get("788614111742263356")
+        await msg.react(g.emojis.cache.get('800939896608129036'));
         const newGiveaway = new Giveaway({
             prize: options.prize,
             duration: options.duration,
@@ -98,11 +102,6 @@ class GiveawayCreator extends EventEmitter {
         if (!job) return false;
 
         job.cancel();
-      if(finalWinners = 1){
-          const win = "Winner"
-      }else{
-          win = "Winners"
-      }
         const channel = this.client.channels.cache.get(data.channelId);
         if (channel) {
             const message = await channel.messages.fetch(messageId);

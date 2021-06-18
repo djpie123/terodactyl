@@ -2,7 +2,7 @@ const Discord = require('discord.js')
 const db = require("quick.db")
 const Canvas = require("canvas")
 const { registerFont, createCanvas } = require('canvas')
-registerFont('./Roboto-Regular.ttf', { family: 'Roboto' })
+registerFont('./Debrosee-ALPnL.ttf', { family: 'Roboto' })
 module.exports.run = async (client, message, args) => {
   let premium = '759040185404096552'
   if (message.guild.id !== premium){

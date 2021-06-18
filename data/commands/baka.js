@@ -1,0 +1,26 @@
+const Discord = require('discord.js');//npm i discordjs@12.2.0 
+const superagent = require('superagent'); //npm i superagent
+
+
+exports.run = async (client, message, args, tools) => {
+    const { body } = await superagent
+    .get("https://nekos.life/api/v2/img/baka"); //wut we went to use
+    
+    const embed = new Discord.MessageEmbed() // changed from RichEmbed to MessageEmbed Method
+    .setColor("#ff9900")
+    .setImage(body.url)  // your commands well showing your order here
+    .setFooter('THIS BOT IS MADE BY PIE IS LIVE ');
+    message.channel.send({embed})
+};
+
+exports.conf = {
+    enabled: false,
+    guildOnly: false,
+    aliases: [],
+    permLevel: 0
+  };
+  
+  module.exports.help = {
+    name: "baka"
+};
+//By NightcoreAT#3678

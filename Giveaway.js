@@ -44,4 +44,4 @@ class Giveaway {
     }
 }
 
-module.exports = Giveaway;
+module.exports = Giveaway
